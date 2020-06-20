@@ -13,4 +13,7 @@ public interface APIService {
 
     @GET("song/songpage")
     Call<ArrayList<Song>> getProduct(@Query("page") int page, @Query("size") int size);
+
+    @GET("song/list")
+    Call<ArrayList<Song>> getPro();
 }

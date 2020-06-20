@@ -50,10 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void callAPI() {
 
-        apiService.getProduct(0, size).enqueue(new Callback<ArrayList<Song>>() {
+        apiService.getPro().enqueue(new Callback<ArrayList<Song>>() {
             @Override
             public void onResponse(Call<ArrayList<Song>> call, Response<ArrayList<Song>> response) {
-                Log.e("hahaha", response.body().size() + "");
                 recyclerView.setHasFixedSize(true);
                 SongNewAdapter recyclerViewAd = new SongNewAdapter(response.body(), getApplicationContext());
                 recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false));
